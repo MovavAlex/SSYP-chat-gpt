@@ -1,53 +1,77 @@
 
-#------------------------------------#
-#x = input("Имя: ")#
-#z = input('Возраст:')#
-#v = input('Время:')
 #
-#print('Меня зовут:', x,"Мне:", z, "лет,сейчас уже:",v)#
+# k = int(input())
+# a = ''
+# c = 0
+# while len(a) <= k:
+#     c += 1
+#     a += str(c)
+#     if len(a) > k:
+#         b = a[k-1]
+#         break
+#     elif len(a) == k:
+#         b = str(a)[-1]
+#         break
+#
+# print(int(b))
 
 
 
-#a = int(input("a:"))
-
-#b = int(input("b:"))
-
-#s = a * b
-#p = (a + b) * 2
-#print("s=",s, "p=", p)
-
-
-#a = input('a')
-#b = input('b')
-
-#a,b = b,a
-
-#print(a)
-#print(b)
-
-
-#a = int(input("a"))
-#b = int(input("b"))
-#c = (a+b)/2
-
-#print(c)
-
-
-
-#h = int(input("часы"))
-#m = int(input("мин"))
-#s = int(input("сек"))
-
-#c=(h * 60 * 60) + (m*60)+ s
-
-
-#print('С начала дня прошло: ', c)
+#
+#
+# k = int(input())
+# strk = ''
+# for i in range(k):
+#     strk += str(i)
+# if len(strk) >= k:
+#     print(strk[k-1])
 
 
 
 
+# k = int(input())
+#
+# strk = ''
+# i = 1
+# while len(strk) < k+1:
+#     strk += str(i)
+#     i += 1
+#
+# print(strk[k-1])
+#
+# 'Ответы: '
+# '11 - 0'
+# '35 - 2'
+# '65011 - 5'
+# '12345678 - 2'
 
 
+
+
+
+
+
+#2
+# k = int(input())
+
+# strk = []
+# while True:
+#     for i in range(0,12):
+#         strk.append(i)
+#
+#     print(strk)
+
+
+
+
+
+
+
+
+
+
+
+print(123)
 
 
 
