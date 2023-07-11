@@ -1,0 +1,17 @@
+DEFAULT_PROMPT = 'You are my helpful assistant'
+
+# DEFAULT_POST_MOD = "Your name is "
+
+MODEL = 'gpt-3.5-turbo'
+TEMPERATURE = 0.7
+TIME_OUT = 125
+MAX_VALUE_COUNT = 1
+CHOICES = 1
+STOP = None
+IMAGE_SIZE = '512x512'
+IMAGE_TOKEN_COUNT = 2001
+
+MAX_SAVE_HISTORY = 6
+
+
+

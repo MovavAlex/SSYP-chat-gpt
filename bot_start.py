@@ -7,7 +7,7 @@ import openai
 import asyncio
 from aiogram import Bot, Dispatcher
 
-from paremeters.gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
+from paremeters.chat_gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
 
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher()
@@ -35,20 +35,20 @@ async def main():
     await dp.start_polling(bot)
 
 
-@dp.message(Command("start"))
+@dp.message_handler(Command("start"))
 async def start_bot(message: types.Message):
     buttons = InlineKeyboardButton(text="Пополнить баланс", callback_data="Start")
     keyboard = InlineKeyboardMarkup(inline_keyboard=[[buttons]])
     await message.answer("Выберите функцию или начните общение", reply_markup=keyboard)
 
 
-@dp.callback_query(Text("Start"))
+@dp.callback_query_handler(Text("Start"))
 async def start_bot(message: types.Message):
     await bot.send_message(chat_id=message.from_user.id, text='Функционала пока нет(')
 
 
 
-@dp.message()
+@dp.message_handler()
 async def send(message: types.Message):
     update(messages, 'user', message.text)
     response = openai.ChatCompletion.create(
@@ -63,12 +63,12 @@ async def send(message: types.Message):
 
 
 
-@dp.message(Command('help'))
+@dp.message_handler(Command('help'))
 async def help(message: types.Message):
     await message.answer('Список комманд для бота: /reset - очищает историю сообщений')
 
 
-@dp.message(Command('reset'))
+@dp.message_handler(Command('reset'))
 async def reset(message: types.Message):
     reset_messages(messages)
     print(messages)
