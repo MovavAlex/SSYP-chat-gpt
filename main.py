@@ -68,16 +68,23 @@
 
 
 
-
-
-
-print(123)
-
-
-
-
+# a = int(input())
+# res = round(a/3.14)
+# print(int(res**0.5))
+#
 
 
 
 
+y = 1000
+k = 7
+c = 0
+lst = []
+for i in range(1,1001):
+    lst.append(i)
 
+while len(lst) >= k:
+    c += 1
+    del lst[k - 1::k]
+
+print(c)

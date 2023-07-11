@@ -7,10 +7,10 @@ import openai
 import asyncio
 from aiogram import Bot, Dispatcher
 
-from Project.paremeters.gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
+from paremeters.gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
 
 bot = Bot(token=TELEGRAM_TOKEN)
-dp = Dispatcher(bot)
+dp = Dispatcher()
 
 messages = [
     {
@@ -65,7 +65,7 @@ async def send(message: types.Message):
 
 @dp.message(Command('help'))
 async def help(message: types.Message):
-    await bot.send_message('Список комманд для бота: /reset - очищает историю сообщений')
+    await message.answer('Список комманд для бота: /reset - очищает историю сообщений')
 
 
 @dp.message(Command('reset'))

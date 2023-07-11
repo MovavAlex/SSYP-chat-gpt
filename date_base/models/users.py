@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from sqlalchemy import BigInteger, INTEGER, VARCHAR
 from sqlalchemy.orm import mapped_column, Mapped
 
-from Project.date_base.models.base import Base
-from Project.structures.enums.Role import Role
+from date_base.models.base import Base
+from structures.enums.Role import Role
 
 
 @dataclass
@@ -17,7 +17,7 @@ class Users(Base):
                                          primary_key=True
                                          )
 
-    # Telegram user client game
+    # Telegram user client name
     user_name: Mapped[int] = mapped_column(VARCHAR(64),
                                            unique=True,
                                            nullable=False
@@ -41,7 +41,7 @@ class Users(Base):
                                        default=Role.user
                                        )
     # Telegram ID by whom the users was invited
-    referall_id: Mapped[int] = mapped_column(BigInteger,
+    refferal_id: Mapped[int] = mapped_column(BigInteger,
                                              unique=False,
                                              nullbase=True
                                              )

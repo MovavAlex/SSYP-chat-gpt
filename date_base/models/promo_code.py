@@ -4,7 +4,7 @@ from datetime import datetime
 from sqlalchemy import INTEGER, VARCHAR, DATE
 from sqlalchemy.orm import mapped_column, Mapped
 
-from Project.date_base.models.base import Base
+from date_base.models.base import Base
 
 
 @dataclass

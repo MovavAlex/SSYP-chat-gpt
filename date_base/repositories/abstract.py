@@ -4,7 +4,7 @@ from typing import Generic, List, Type, TypeVar, Union
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from Project.date_base.models.base import Base
+from date_base.models.base import Base
 
 AbstractModel = TypeVar("AbstractModel")
 
