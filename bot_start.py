@@ -2,13 +2,15 @@ from aiogram import types
 from aiogram.filters import Text, Command
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import openai
-
+import logging
 
 import asyncio
 from aiogram import Bot, Dispatcher
 
 from paremeters.chat_gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
-
+from structures.data_structures import TransferData
+from date_base.database import create_session_maker
+from structures.data_structures import TransferData
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher()
 
@@ -76,15 +78,35 @@ async def reset(message: types.Message):
 
 
 
+logger = logging.getLogger(__name__)
 
+async def start_bot():
+    logging.basicConfig(
+        level=logging.INFO,
+        format=u'%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s]'u' - %(name)s - %(message)s',
+        file_name='.../bot_history'
+    )
+    logger.info('starting_bot')
 
+    bot  =Bot(token=conf.bot.token)
 
+    transfer_data: TransferData = TransferData(pool= create_session_maker())
 
+    await set_bot_command(bot)
 
+    try:
+        await dp.start_polling(
+            bot,
+            allowed_update= dp.resolve_used_update_types(),
+            **transfer_data)
+    finally:
+        await bot.session.close()
 
-
-
-
+if __name__ == "__main__":
+    try:
+        asyncio.run(start_bot)
+    except {KeyboardInterrupt, SystemError}:
+        logger.error('Bot stopped')
 
 
 

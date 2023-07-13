@@ -16,7 +16,7 @@ def create_async_engine(url: Union[URL, str]) -> AsyncEngine:
                                 echo=False,
                                 pool_pre_ping=True
                                 )
-def creatr_session_maker(engine: AsyncEngine = None) -> sessionmaker:
+def create_session_maker(engine: AsyncEngine = None) -> sessionmaker:
     """
     Create session maker
     :param engine: async engine

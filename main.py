@@ -1,4 +1,3 @@
-
 #
 # k = int(input())
 # a = ''
@@ -16,7 +15,6 @@
 # print(int(b))
 
 
-
 #
 #
 # k = int(input())
@@ -25,8 +23,6 @@
 #     strk += str(i)
 # if len(strk) >= k:
 #     print(strk[k-1])
-
-
 
 
 # k = int(input())
@@ -46,12 +42,7 @@
 # '12345678 - 2'
 
 
-
-
-
-
-
-#2
+# 2
 # k = int(input())
 
 # strk = []
@@ -62,18 +53,10 @@
 #     print(strk)
 
 
-
-
-
-
-
-
 # a = int(input())
 # res = round(a/3.14)
 # print(int(res**0.5))
 #
-
-
 
 
 # y = 1000
@@ -88,9 +71,6 @@
 #     del lst[k - 1::k]
 #
 # print(c)
-
-
-
 
 
 # # Задача 1
@@ -113,7 +93,6 @@
 #    c_o += 1
 # #Вывод результата
 # print(c_o-c_n)
-
 
 
 '''
@@ -172,10 +151,6 @@
 
 '''
 
-
-
-
-
 # from math import log
 #
 # a = int(input())
@@ -201,9 +176,8 @@
 #     print(res)
 
 
-#Импортируем логарифмы
+# Импортируем логарифмы
 from math import log
-
 
 # a = int(input())#Принимаем на вход число
 # x = 0 #Создаем пустую переменную
@@ -213,8 +187,7 @@ from math import log
 #
 
 
-
-#Импортируем логарифмы
+# Импортируем логарифмы
 # from math import log
 #
 #
@@ -241,23 +214,195 @@ from math import log
 # else:
 #     print(res)
 
+#
+# s = input().split('x')
+# a = int(s[0])
+# b = int(s[1])
+# c = 0
+# lst = []
+# for i in range(a):
+#     if a > b:
+#         c += 1
+#         a -= b
+#     elif a < b:
+#         c += 1
+#         b -= a
+#
+#
+# print(c+1)
+# print(a*b)
+#
+#
 
-s = input().split('x')
-a = int(s[0])
-b = int(s[1])
-c = 0
+# def tr(arr):
+#     d = arr[0]-arr[1]
+#     for i in range(2,len(arr)-2):
+#         if arr[i-1]-arr[i] != d:
+#             return False
+#
+# print(tr([6,1,0,4]))
+
+
+#
+# pre = 0
+# a = int(input())
+# count = 0
+# lst = []
+# new = 0
+# for i in range(a):
+#     if a % 2 == 0:
+#         a //= 2
+#         count += 1
+#     else:
+#        break
+#
+# for i in range(1,a+1):
+#     if i%2 != 0:
+#         lst.append(i)
+#
+# for i in lst:
+#     if i == a:
+#         pre = lst.index(a)
+#
+#
+# res = pre * a
+#
+#
+#
+# print(count + res)
+#
+
+#
+# a = 11
+# nech = a-(a//2)
+# chet = a//2
+# print(nech)
+# print(chet)
+
+
+
+#
+# a = input()
+# res = ''
+# for i in a:
+#     if i == '(' and ')' in a:
+#         res = 'Right'
+#     elif i == '(' and ')' not in a:
+#         res = 'Wrong'
+#     elif i == '{' and '}' in a:
+#         res = 'Right'
+#     elif i == '{' and '}' not in a:
+#         res = 'Wrong'
+#     elif i == '[' and ']' in a:
+#         res = 'Right'
+#     elif i == '[' and ']' not in a:
+#         res = 'Wrong'
+# print(res)
+
+# a = input()
+# lefts = 0
+# rights = 0
+# Bracesleft = []
+# Bracesright = []
+# Square_bracketsleft = []
+# Square_bracketsright= []
+# Parenthesesleft = []
+# Parenthesesright = []
+#
+# for i in a:
+#     if i == '{':
+#         Bracesleft.append(a.index(i))
+#         lefts += 1
+#     elif i == '}':
+#         Bracesright.append(a.index(i))
+#         rights += 1
+#     elif i == '[':
+#         Square_bracketsleft.append(a.index(i))
+#         lefts += 1
+#     elif i == ']':
+#         Square_bracketsright.append(a.index(i))
+#         rights += 1
+#     if i == '(':
+#         lefts += 1
+#         Parenthesesleft.append(a.index(i))
+#     elif i == ')':
+#         rights += 1
+#         Parenthesesright.append(a.index(i))
+# print('{: ',Bracesleft)
+# print('}: ',Bracesright)
+# print('[: ',Square_bracketsleft)
+# print(']: ',Square_bracketsright)
+# print('(: ',Parenthesesleft)
+# print('0: ',Parenthesesright)
+# print(len(a))
+# print(lefts,rights)
+
+# if lefts > rights or lefts < rights:
+#         res = 'Wrong'
+# else:
+#     for i in range(True):
+#         if Bracesleft[i] > Bracesright[i] or Square_bracketsleft[i] > Square_bracketsright[i] or Parenthesesleft[i] > Parenthesesright[i]:
+#             res = 'Wrong'
+#             break
+#         else:
+#             res = 'Right'
+#             break
+#
+# print(res)
+
+
+
+
+
+
+a = input()
 lst = []
-for i in range(a):
-    if a > b:
-        c += 1
-        a -= b
-    elif a < b:
-        c += 1
-        b -= a
+open = '{(['
+close = '})]'
+
+err = 0
 
 
-print(c+1)
-print(a*b)
+for i in a:
+    if i in open and i == '(':
+        lst.append(i)
+    elif i in close and i == ')':
+        try:
+            lst.remove('(')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+    elif i in open and i == '[':
+        lst.append(i)
+    elif i in close and i == ']':
+        try:
+            lst.remove('[')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+    elif i in open and i == '{':
+        lst.append(i)
+    elif i in close and i == '}':
+        try:
+            lst.remove('{')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+
+
+
+
+
+
+if lst == [] and err == 0:
+    print('Right')
+elif err == 1:
+    print()
+else:
+    print('Wrong')
 
 
 

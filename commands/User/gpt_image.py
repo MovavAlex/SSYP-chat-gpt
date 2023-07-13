@@ -11,17 +11,17 @@ from paremeters.bot_parameters import PARSE_MODE
 from paremeters.response_templates import START_RESPONSE
 from structures.enums.image import OrderImageGenerate
 
-user_get_image_router = Router()
+user_gpt_image_router = Router()
 
-user_get_image_router.message.middleware(RoleMiddleware)
-user_get_image_router.message.middleware(BalanceMiddleware)
+user_gpt_image_router.message.middleware(RoleMiddleware)
+user_gpt_image_router.message.middleware(BalanceMiddleware)
 
-@user_get_image_router.message(
+@user_gpt_image_router.message(
     ChatTypeFilter(chat_type=[ChatType.PRIVATE]),
     OrderImageGenerate.image_generate,
     Command('image')
 )
-@user_get_image_router.message(
+@user_gpt_image_router.message(
     ChatTypeFilter(chat_type=[ChatType.PRIVATE]),
     OrderImageGenerate.image_generate,
     F.text,

@@ -101,6 +101,54 @@ print(a*b)
 
 
 
+a = input()
+lst = []
+open = '{(['
+close = '})]'
+
+err = 0
+
+
+for i in a:
+    if i in open and i == '(':
+        lst.append(i)
+    elif i in close and i == ')':
+        try:
+            lst.remove('(')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+    elif i in open and i == '[':
+        lst.append(i)
+    elif i in close and i == ']':
+        try:
+            lst.remove('[')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+    elif i in open and i == '{':
+        lst.append(i)
+    elif i in close and i == '}':
+        try:
+            lst.remove('{')
+        except ValueError:
+            print("Wrong")
+            err = 1
+            break
+
+
+
+
+
+
+if lst == [] and err == 0:
+    print('Right')
+elif err == 1:
+    print()
+else:
+    print('Wrong')
 
 
 
