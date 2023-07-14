@@ -88,7 +88,7 @@ async def start_bot():
     )
     logger.info('starting_bot')
 
-    bot  =Bot(token=conf.bot.token)
+    bot= Bot(token=conf.bot.token)
 
     transfer_data: TransferData = TransferData(pool= create_session_maker())
 

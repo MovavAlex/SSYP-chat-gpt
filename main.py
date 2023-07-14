@@ -178,231 +178,142 @@
 
 # Импортируем логарифмы
 from math import log
-
-# a = int(input())#Принимаем на вход число
-# x = 0 #Создаем пустую переменную
-# res =''#Создаем переменную, в которую будем записывать результат
-# lst = [] #Создаем список
 #
-#
-
-
-# Импортируем логарифмы
-# from math import log
-#
-#
-# a = int(input())#Принимаем на вход число
-# x = 0 #Создаем пустую переменную
-# res =''#Создаем переменную, в которую будем записывать результат
-# lst = [] #Создаем список
-# for i in range(a):
-#
-#     lst.append(4**i) # Добавляем все четверки в степени в список
-#    # Проверяем число
-#     # Если число - и есть четверка в степени, то добавляем его в res и заканчиваем программу
-#     if a - 4**i == 0:
-#         res = f'{4}^{i}'
-#    #Иначе:
-#    #Если число состоит из суммы двух четверок в степени,    # то мы находим степень второй четверки и добавляем его в res
-#     elif (a - 4**i) in lst:
-#         p = a-4**i
-#         x = log(p)/log(4) # нахождение степени второй четверки
-#         res = f'{4}^{i} + {4}^{int(x)}'
-# #Проверка на наличие результата
-# if res == '':
-#     print('Это число невозможно представить в виде суммы степеней четверки')
-# else:
-#     print(res)
-
-#
-# s = input().split('x')
-# a = int(s[0])
-# b = int(s[1])
-# c = 0
-# lst = []
-# for i in range(a):
-#     if a > b:
-#         c += 1
-#         a -= b
-#     elif a < b:
-#         c += 1
-#         b -= a
-#
-#
-# print(c+1)
-# print(a*b)
-#
-#
-
-# def tr(arr):
-#     d = arr[0]-arr[1]
-#     for i in range(2,len(arr)-2):
-#         if arr[i-1]-arr[i] != d:
-#             return False
-#
-# print(tr([6,1,0,4]))
-
-
-#
-# pre = 0
-# a = int(input())
+# str = input().split()
 # count = 0
 # lst = []
-# new = 0
-# for i in range(a):
-#     if a % 2 == 0:
-#         a //= 2
-#         count += 1
-#     else:
-#        break
+# for i in str:
+#     lst.append(int(i))
+# while lst != []:
+#     for i in range(len(lst) - 1):
+#         for j in range(len(lst) - i - 1):
+#             if lst[j] > lst[j - 1]:
+#                 lst[j], lst[j - 1] = lst[j - 1], lst[j]
 #
-# for i in range(1,a+1):
-#     if i%2 != 0:
-#         lst.append(i)
+#         if lst[0] > 0:
+#             lst[2] -= 1
+#             lst[0] -= 1
+#             count += 1
+#         elif lst[0] == 0 and lst[2] > lst[1] and lst[1] > 0:
+#             lst[2] -= 1
+#             lst[1] -= 1
+#             count += 1
+#         elif lst[0] == 0 and lst[1] > lst[2] and lst[2] > 0:
+#             lst[1] -= 1
+#             lst[2] -= 1
+#             count += 1
 #
-# for i in lst:
-#     if i == a:
-#         pre = lst.index(a)
 #
-#
-# res = pre * a
-#
-#
-#
-# print(count + res)
-#
-
-#
-# a = 11
-# nech = a-(a//2)
-# chet = a//2
-# print(nech)
-# print(chet)
-
-
-
-#
-# a = input()
-# res = ''
-# for i in a:
-#     if i == '(' and ')' in a:
-#         res = 'Right'
-#     elif i == '(' and ')' not in a:
-#         res = 'Wrong'
-#     elif i == '{' and '}' in a:
-#         res = 'Right'
-#     elif i == '{' and '}' not in a:
-#         res = 'Wrong'
-#     elif i == '[' and ']' in a:
-#         res = 'Right'
-#     elif i == '[' and ']' not in a:
-#         res = 'Wrong'
-# print(res)
-
-# a = input()
-# lefts = 0
-# rights = 0
-# Bracesleft = []
-# Bracesright = []
-# Square_bracketsleft = []
-# Square_bracketsright= []
-# Parenthesesleft = []
-# Parenthesesright = []
-#
-# for i in a:
-#     if i == '{':
-#         Bracesleft.append(a.index(i))
-#         lefts += 1
-#     elif i == '}':
-#         Bracesright.append(a.index(i))
-#         rights += 1
-#     elif i == '[':
-#         Square_bracketsleft.append(a.index(i))
-#         lefts += 1
-#     elif i == ']':
-#         Square_bracketsright.append(a.index(i))
-#         rights += 1
-#     if i == '(':
-#         lefts += 1
-#         Parenthesesleft.append(a.index(i))
-#     elif i == ')':
-#         rights += 1
-#         Parenthesesright.append(a.index(i))
-# print('{: ',Bracesleft)
-# print('}: ',Bracesright)
-# print('[: ',Square_bracketsleft)
-# print(']: ',Square_bracketsright)
-# print('(: ',Parenthesesleft)
-# print('0: ',Parenthesesright)
-# print(len(a))
-# print(lefts,rights)
-
-# if lefts > rights or lefts < rights:
-#         res = 'Wrong'
-# else:
-#     for i in range(True):
-#         if Bracesleft[i] > Bracesright[i] or Square_bracketsleft[i] > Square_bracketsright[i] or Parenthesesleft[i] > Parenthesesright[i]:
-#             res = 'Wrong'
-#             break
 #         else:
-#             res = 'Right'
 #             break
+#     if lst[0] == 0 and lst[1] == 0 or lst[1] == 0 and lst[2] == 0 or lst[2] == 0 and lst[0] == 0:
+#         break
 #
-# print(res)
+# print(count)
+# print(lst)
+
+
+str = input().split()
+a = int(str[0])
+b = int(str[0])
+c = int(str[0])
+result = (a+b+c)//2
+
+print(result)
+
+
+# while lst != []:
+#     print(lst)
+#     if lst[0] != 0:
+#         lst[2] = lst[2] - 1
+#         lst[0] -= 1
+#         count += 1
+#     elif lst[0] == 0 and lst[2] > lst[1] and lst[1] > 0:
+#         lst[2] -= 1
+#         lst[1] -= 1
+#         count += 1
+#     elif lst[0] == 0 and lst[1] > lst[2] and lst[2] > 0:
+#         lst[1] -= 1
+#         lst[2] -= 1
+#         count += 1
+#     elif lst[0] == lst[1] == lst[2]:
+#
+#     else:
+#         break
 
 
 
 
 
 
-a = input()
-lst = []
-open = '{(['
-close = '})]'
-
-err = 0
 
 
-for i in a:
-    if i in open and i == '(':
-        lst.append(i)
-    elif i in close and i == ')':
-        try:
-            lst.remove('(')
-        except ValueError:
-            print("Wrong")
-            err = 1
-            break
-    elif i in open and i == '[':
-        lst.append(i)
-    elif i in close and i == ']':
-        try:
-            lst.remove('[')
-        except ValueError:
-            print("Wrong")
-            err = 1
-            break
-    elif i in open and i == '{':
-        lst.append(i)
-    elif i in close and i == '}':
-        try:
-            lst.remove('{')
-        except ValueError:
-            print("Wrong")
-            err = 1
-            break
+
+# while lst != []:
+#     if lst[2] > lst[1]:
+#         lst[2] -= 1
+#         lst[1] -= 1
+#         count += 1
+#         print(lst)
+#     elif lst[2] == lst[1]:
+#         lst[2] -= 1
+#         lst[1] -= 1
+#         count += 1
+#
+#     elif lst[2] < lst[1]:
+#         lst[1] -= 1
+#         lst[2] -= 1
+#         count += 1
+# print(lst)
+
+# print(a*(a-1))
 
 
 
 
 
 
-if lst == [] and err == 0:
-    print('Right')
-elif err == 1:
-    print()
-else:
-    print('Wrong')
+
+
+
+
+
+
+
+
+
+"""
+# Обьяснения:
+# При вводе 3 банок a b c
+# у туриста есть 6 вариантов при которых он не открывает 2 одинаковые банки за день
+# ab, ac, ba, bc, ca, cb
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
