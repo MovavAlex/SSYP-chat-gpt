@@ -213,13 +213,13 @@ from math import log
 # print(lst)
 
 
-str = input().split()
-a = int(str[0])
-b = int(str[0])
-c = int(str[0])
-result = (a+b+c)//2
-
-print(result)
+# str = input().split()
+# a = int(str[0])
+# b = int(str[0])
+# c = int(str[0])
+# result = (a+b+c)//2
+#
+# print(result)
 
 
 # while lst != []:
@@ -290,6 +290,33 @@ print(result)
 
 """
 
+
+
+#
+# def fact(n):
+#     if n > 0 :
+#         return n*fact(n-1)
+#     elif n == 0:
+#         return 1
+#
+# n = int(input())
+# print(fact(n))
+
+
+
+
+
+# def fact(n):
+#     count = 1
+#     for i in range(1,n+1):
+#         if n>0:
+#             count *= i
+#         elif n==0:
+#             return 1
+#     return count
+# n = int(input())
+# print(fact(n))
+#
 
 
 

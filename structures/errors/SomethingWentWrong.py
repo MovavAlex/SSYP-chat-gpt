@@ -6,4 +6,4 @@ class SomethingWentWrong(Exception):
         super().__init__(message)
 
     def log_error(self):
-        logging.error(f'Too many requests: {self.args}')
+        logging.error(f'Something went wrong: {self.args}')

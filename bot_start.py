@@ -8,9 +8,11 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 from paremeters.chat_gpt_paremeters import TELEGRAM_TOKEN, CHAT_GPT_KEY
-from structures.data_structures import TransferData
 from date_base.database import create_session_maker
 from structures.data_structures import TransferData
+from structures import conf, set_bot_commands, Role
+
+
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher()
 

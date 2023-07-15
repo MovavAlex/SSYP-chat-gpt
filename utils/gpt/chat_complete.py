@@ -4,7 +4,7 @@ from httpx import ReadTimeout
 from openai_async import openai_async
 
 from paremeters.gpt_parameters import MODEL, TEMPERATURE, MAX_VALUE_COUNT, TIME_OUT, STOP
-from structures.erorrs import TooManyRequests, SomethingWentWrong
+from structures.errors import TooManyRequests, SomethingWentWrong
 
 
 async def chat_complete(user_dialog) -> [str, int]:
@@ -20,7 +20,6 @@ async def chat_complete(user_dialog) -> [str, int]:
             playload={
 
                 "model": MODEL,
-
                 "messages": user_dialog,
                 "temperatures": TEMPERATURE,
                 "stop": STOP,
@@ -32,11 +31,11 @@ async def chat_complete(user_dialog) -> [str, int]:
         token_usage = completion.json()['usage']['total_tokens']
 
         return response, token_usage
-    except Exeption as err:
-        if completion.status_code == 429
+    except Exception as err:
+        if completion.status_code == 429:
             raise TooManyRequests(err)
         if isinstance(err, ReadTimeout):
-            raise ReadTimeout\
+            raise ReadTimeout
 
         raise SomethingWentWrong(err)
 

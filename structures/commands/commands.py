@@ -1,7 +1,7 @@
 from aiogram import Bot
 from aiogram.types import BotCommand, BotCommandScopeAllPrivateChats
 
-from commands.commandName import START_COMMAND, RESET_COMMAND, CANCEL_COMMAND, REPLY_COMMAND
+from commands.commandName import START_COMMAND, RESET_COMMAND, CANCEL_COMMAND, REPLY_COMMAND, IMAGE_COMMAND
 async def set_bot_commands(self, Bot):
     data = [
         {
@@ -18,6 +18,5 @@ async def set_bot_commands(self, Bot):
         }
 
     ]
-    for commands_list(), command_scope, language in data:
-        await bot.set_my_commands(commands= commands_list(), scope=command_scope, language_code=language
-                                  )
+    for commands_list, command_scope, language in data:
+        await bot.set_my_commands(commands= commands_list, scope=command_scope, language_code=language)
